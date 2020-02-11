@@ -1,0 +1,11 @@
+.reserve-block {
+    background-color: antiquewhite;
+}
+
+.img-fluid2 {
+    width: -webkit-fill-available; height:400px;
+}
+
+.container2 {
+    min-height: 550px;
+}

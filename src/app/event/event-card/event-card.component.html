@@ -1,0 +1,17 @@
+
+    <div class="featured-place-wrap">
+        <a [routerLink]="['/event/', event.id]" >
+        <img src="https://www.eventguru.ng/events/images/{{event.banner}}" class="img-fluid" alt="#">
+            <span class="featured-rating-orange">{{event.free_or_paid_event}}</span>
+            <div class="featured-title-box">
+                <h4>{{event.event_name}}</h4>
+            <h5>{{event.event_venue}}</h5>
+                <div class="bottom-icons">
+ 
+                <div class="closed-now">{{event.event_date}}</div>
+                  <span class="ti-heart"></span>
+                   <!---   <span class="ti-bookmark"></span> -->
+                </div>
+            </div>
+        </a> 
+    </div>

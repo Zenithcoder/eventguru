@@ -24,9 +24,32 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/style.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/demo.css",
+              "src/assets/css/font-awesome.min.css",
+              "src/assets/css/magnific-popup.css",
+              "src/assets/css/set1.css",
+              "src/assets/css/set2.css",
+              "src/assets/css/simple-line-icons.css",
+            //  "src/assets/css/style.css.map",
+              "src/assets/css/swiper.min.css",
+             
+              "src/assets/css/themify-icons.css"
+
+              
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/alertifyjs/build/alertify.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+        //     "src/assets/js/bootstrap.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/jquery-3.2.1.min.js",
+              "src/assets/js/jquery.magnific-popup.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/swiper.min.js"
+            ]
           },
           "configurations": {
             "production": {

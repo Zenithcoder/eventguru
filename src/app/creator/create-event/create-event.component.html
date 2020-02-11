@@ -1,0 +1,99 @@
+
+<app-creator-nav></app-creator-nav>
+<div class="container-fluid">
+  <div class="row">
+    <app-creator-left></app-creator-left>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-10">
+    <!--  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Create Event</h1>
+      
+      </div> -->
+
+    
+<div class="row " style="background-color: #FF772E; color: #E8532A;">
+    <div class="col-md-9 offset-md-1"  >
+        <form [formGroup]="eventForm" (ngSubmit)="register()">
+            <h2 class="text-center" style="
+            margin-top: 100px; color: #FF2EAF;
+        "> Create Event</h2>
+            <hr>
+          
+
+            <div class="form-group">
+              <label for="inputEmail" class="sr-only">Event Name</label>
+              <h5 style="color: black;">Event Name</h5>
+              <input type="text" 
+                [ngClass]="{'is-invalid': eventForm.get('event_name').errors 
+                  && eventForm.get('event_name').touched}"
+                class="form-control" 
+                formControlName="event_name" 
+                placeholder="Event Name">
+              <div class="invalid-feedback">Event Name is required</div>
+            </div>
+          
+            <div class="form-group">
+                <input [ngClass]="{'is-invalid': eventForm.get('event_description').errors && eventForm.get('event_description').touched}" class="form-control"
+                  placeholder="Event Description" formControlName="event_description">
+                <div class="invalid-feedback" *ngIf="eventForm.get('event_description').touched && eventForm.get('event_description').hasError('required')">Event Description is required</div>
+              </div>
+          
+              
+          
+                <div class="form-group">
+                    <input [ngClass]="{'is-invalid': eventForm.get('total_number_of_attendee').errors && eventForm.get('total_number_of_attendee').touched}" class="form-control"
+                      placeholder=" Total Numbe of Attendee" formControlName="total_number_of_attendee">
+                    <div class="invalid-feedback" *ngIf="eventForm.get('total_number_of_attendee').touched && eventForm.get('total_number_of_attendee').hasError('required')">total_number_of_attendee is required</div>
+                  </div>
+
+                  <div class="form-group">
+                    <input [ngClass]="{'is-invalid': eventForm.get('event_venue').errors && eventForm.get('event_venue').touched}" class="form-control"
+                      placeholder="event_venue" formControlName="event_venue">
+                    <div class="invalid-feedback" *ngIf="eventForm.get('event_venue').touched && eventForm.get('event_venue').hasError('required')">event_venue is required</div>
+                  </div>
+                   
+                  <div class="form-group">
+                    <input type="date" [ngClass]="{'is-invalid': eventForm.get('event_startdate').errors && eventForm.get('event_startdate').touched}" class="form-control"
+                      placeholder="event_startdate" formControlName="event_startdate">
+                    <div class="invalid-feedback" *ngIf="eventForm.get('event_startdate').touched && eventForm.get('event_startdate').hasError('required')">event_startdate is required</div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="date" [ngClass]="{'is-invalid': eventForm.get('event_enddate').errors && eventForm.get('event_enddate').touched}" class="form-control"
+                      placeholder="event_enddate" formControlName="event_enddate">
+                    <div class="invalid-feedback" *ngIf="eventForm.get('event_enddate').touched && eventForm.get('event_enddate').hasError('required')">event_enddate is required</div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="date" [ngClass]="{'is-invalid': eventForm.get('registration_closing_date').errors && eventForm.get('registration_closing_date').touched}" class="form-control"
+                      placeholder="registration_closing_date" formControlName="registration_closing_date">
+                    <div class="invalid-feedback" *ngIf="eventForm.get('registration_closing_date').touched && eventForm.get('registration_closing_date').hasError('required')">registration_closing_date is required</div>
+                  </div>
+
+                  <div class="form-group">
+                    <input [ngClass]="{'is-invalid': eventForm.get('free_or_paid_event').errors && eventForm.get('free_or_paid_event').touched}" class="form-control"
+                      placeholder="free_or_paid_event" formControlName="free_or_paid_event">
+                    <div class="invalid-feedback" *ngIf="eventForm.get('free_or_paid_event').touched && eventForm.get('free_or_paid_event').hasError('required')">free_or_paid_event is required</div>
+                  </div>
+
+                
+
+                  <div class="form-group">
+                    <label for="avatar">Banner</label>
+                    <input type="file" id="banner" (change)="onFileChange($event)" #fileInput>
+                    <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
+                  </div>
+                  
+                  
+            <div class="form-group text-center">
+              <button class="btn btn-success" [disabled]="!eventForm.valid" type="submit">Register<i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
+             
+            </div>
+            
+          </form>
+    </div>
+</div>    
+    </main>
+  </div>
+</div>
+ 
